@@ -5,5 +5,6 @@
 
 ## Requirements
 * Python 3.6
+* NumPy
 * OpenCV-Python
 * Matplotlib
