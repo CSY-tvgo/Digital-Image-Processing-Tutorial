@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-# 实验三：平滑消噪处理
+# 实验三：邻域平均消噪处理
 
 
 # 用于邻域平均消噪的函数
@@ -62,7 +62,7 @@ if __name__ == '__main__':
     H0 = np.array(
         [[1/9, 1/9, 1/9],
          [1/9, 1/9, 1/9],
-         [1/9, 1/9, 1/9]])  # 平滑模板
+         [1/9, 1/9, 1/9]])  # 均值模板
     aft1 = deNoiseByAverage(raw, H0)
 
     H2 = np.array(
@@ -96,7 +96,7 @@ if __name__ == '__main__':
 
     plt.subplot(2, 3, 2)
     plt.imshow(cv2.cvtColor(aft1, cv2.COLOR_GRAY2RGB))
-    plt.title("3*3平滑模板消噪之后")
+    plt.title("3*3均值模板消噪之后")
 
     plt.subplot(2, 3, 3)
     plt.imshow(cv2.cvtColor(aft2, cv2.COLOR_GRAY2RGB))
@@ -104,14 +104,14 @@ if __name__ == '__main__':
 
     plt.subplot(2, 3, 4)
     plt.imshow(cv2.cvtColor(aft3, cv2.COLOR_GRAY2RGB))
-    plt.title("7*7平滑模板 阈值" + str(th3))
+    plt.title("7*7均值模板 阈值" + str(th3))
 
     plt.subplot(2, 3, 5)
     plt.imshow(cv2.cvtColor(aft4, cv2.COLOR_GRAY2RGB))
-    plt.title("7*7平滑模板 阈值" + str(th4))
+    plt.title("7*7均值模板 阈值" + str(th4))
 
     plt.subplot(2, 3, 6)
     plt.imshow(cv2.cvtColor(aft5, cv2.COLOR_GRAY2RGB))
-    plt.title("7*7平滑模板 阈值" + str(th5))
+    plt.title("7*7均值模板 阈值" + str(th5))
 
     plt.show()
