@@ -2,7 +2,8 @@ import cv2
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
-import ex1
+
+from ex1_求直方图 import *
 
 
 # 实验二_额外：图像的直方图均衡化
@@ -13,7 +14,7 @@ def HistEqualize(rawImage):
     raw_height = rawImage.shape[0]  # 获取原图像的高度
     raw_width = rawImage.shape[1]  # 获取原图像的宽度
 
-    hist = ex1.caculateHist(rawImage)  # 调用实验一中写的的函数求各个灰度级的频率
+    hist = caculateHist(rawImage)  # 调用实验一中写的的函数求各个灰度级的频率
 
     prob_sum = np.zeros(256)  # 初始化一个长度为256的全零向量，用以存储累积概率
     prob_sum[0] = hist[0]  # 计算累积概率

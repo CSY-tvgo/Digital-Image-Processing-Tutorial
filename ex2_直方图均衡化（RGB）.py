@@ -2,8 +2,7 @@ import cv2
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
-
-from ex2_均衡化 import *
+from ex2_直方图均衡化 import *
 
 
 # 实验二_额外的额外：彩色图像的直方图均衡化

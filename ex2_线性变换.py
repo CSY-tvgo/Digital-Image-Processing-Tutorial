@@ -2,7 +2,8 @@ import cv2
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
-import ex1
+
+from ex1_求直方图 import *
 
 
 # 实验二：图像的线性变换
@@ -36,7 +37,7 @@ if __name__ == '__main__':
     raw = cv2.imread("images/butterfly.bmp", 0)  # 0表示以灰度图形式导入，导入后raw是一个二维矩阵
 
     # 此部分为实际处理
-    raw_hist = ex1.caculateHist(raw)       # 调用实验一中求直方图的函数求原图直方图
+    raw_hist = caculateHist(raw)       # 调用实验一中求直方图的函数求原图直方图
     aft1 = LinearTransform(raw)            # 全程线性变换
     aft2 = LinearTransform(raw, 0, 100)  # 变换范围为[100,200]的线性变换
     aft3 = LinearTransform(raw, 100, 200)  # 变换范围为[100,200]的线性变换

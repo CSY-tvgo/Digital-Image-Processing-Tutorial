@@ -3,7 +3,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 
-import ex3
+from ex3_均值滤波 import *
 
 # 实验五：中值滤波
 
@@ -89,7 +89,7 @@ if __name__ == '__main__':
          [1, 1, 1, 1, 1],
          [1, 1, 1, 1, 1],
          [1, 1, 1, 1, 1]])/25
-    aft5 = ex3.deNoiseByAverage(raw, mask5)
+    aft5 = deNoiseByAverage(raw, mask5)
 
     # 以下代码用于显示图片
     matplotlib.rcParams['font.sans-serif'] = ['SimHei']   # 用黑体显示中文

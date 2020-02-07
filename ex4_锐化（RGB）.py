@@ -3,7 +3,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 
-import ex4
+from ex4_锐化 import *
 
 # 实验四_额外：彩色图片锐化
 
@@ -15,9 +15,9 @@ import ex4
 def sharpen_Laplacian_RGB(rawImage, alpha):
     aft = np.zeros(rawImage.shape, dtype='uint8')
     # 对三个通道分别进行拉普拉斯锐化
-    aft[:, :, 0] = ex4.sharpen_Laplacian(rawImage[:, :, 0], alpha)
-    aft[:, :, 1] = ex4.sharpen_Laplacian(rawImage[:, :, 1], alpha)
-    aft[:, :, 2] = ex4.sharpen_Laplacian(rawImage[:, :, 2], alpha)
+    aft[:, :, 0] = sharpen_Laplacian(rawImage[:, :, 0], alpha)
+    aft[:, :, 1] = sharpen_Laplacian(rawImage[:, :, 1], alpha)
+    aft[:, :, 2] = sharpen_Laplacian(rawImage[:, :, 2], alpha)
     return aft
 
 
@@ -29,13 +29,13 @@ if __name__ == '__main__':
 
     # 此部分为实际处理
     aft1 = np.zeros(raw.shape, dtype='uint8')
-    aft1[:, :, 0] = ex4.sharpen_Laplacian(raw[:, :, 0], 1)
+    aft1[:, :, 0] = sharpen_Laplacian(raw[:, :, 0], 1)
 
     aft2 = np.zeros(raw.shape, dtype='uint8')
-    aft2[:, :, 1] = ex4.sharpen_Laplacian(raw[:, :, 1], 1)
+    aft2[:, :, 1] = sharpen_Laplacian(raw[:, :, 1], 1)
 
     aft3 = np.zeros(raw.shape, dtype='uint8')
-    aft3[:, :, 2] = ex4.sharpen_Laplacian(raw[:, :, 2], 1)
+    aft3[:, :, 2] = sharpen_Laplacian(raw[:, :, 2], 1)
 
     aft4 = sharpen_Laplacian_RGB(raw, 1)
 
